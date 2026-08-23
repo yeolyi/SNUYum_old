@@ -20,13 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     ) -> Bool {
         // Override point for customization after application launch.
         requestPermission()
-        //Initialize Google Admob.
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        
+        // Initialize Google Admob.
         FirebaseApp.configure()
         FUIOAuth.appleAuthProvider()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+
         return true
     }
     

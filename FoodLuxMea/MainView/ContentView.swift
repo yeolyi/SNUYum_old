@@ -8,6 +8,7 @@
 import SwiftUI
 import GoogleMobileAds
 import Network
+import StoreKit
 
 struct ContentView: View {
     
@@ -73,6 +74,17 @@ struct ContentView: View {
                 }
             }
             .zIndex(2)
+        }
+        .onAppear {
+            if appStatus.executionTimeCount > 20 {
+                if #available(iOS 14.0, *) {
+                    if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                        SKStoreReviewController.requestReview(in: scene)
+                    }
+                } else if #available(iOS 10.3, *) {
+                    SKStoreReviewController.requestReview()
+                }
+            }
         }
     }
     

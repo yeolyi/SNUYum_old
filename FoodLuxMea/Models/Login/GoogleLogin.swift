@@ -32,10 +32,9 @@ struct GoogleLogin: View {
         .frame(maxWidth: .infinity, maxHeight: 50)
         .overlay(
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: 2)
+                    .strokeBorder(colorScheme == .dark ? Color.white : Color.black, lineWidth: 2)
                     .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
             )
-        .padding([.leading, .trailing], 30)
     }
 }
 

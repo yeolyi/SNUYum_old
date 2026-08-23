@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene
-        //`scene`.
+        // `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new
         // (see `application:configurationForConnectingSceneSession` instead).
@@ -40,7 +40,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.listManager.update(newCafeList: cafeList)
         }
         
-        //requestPermission()
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

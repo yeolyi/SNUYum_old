@@ -7,6 +7,7 @@
 
 import AppTrackingTransparency
 import AdSupport
+import GoogleMobileAds
 
 /// Newly added permissions for iOS 14 - related to google admob.
 func requestPermission() {
@@ -32,6 +33,9 @@ func requestPermission() {
             @unknown default:
                 print("Unknown")
             }
+            GADMobileAds.sharedInstance().start(completionHandler: nil)
         }
+    } else {
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
 }

@@ -51,9 +51,6 @@ class AppStatus: ObservableObject {
         if executionTimeCount == 1 {
             isFirstVersionRun = true
         }
-        if executionTimeCount > 20 {
-            SKStoreReviewController.requestReview()
-        } 
         let currentBuild = (Bundle.main.infoDictionary?["CFBundleVersionString"] as? String) ?? ""
         let currentAppVersion = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? ""
         if appVersion != currentAppVersion || build != currentBuild {
